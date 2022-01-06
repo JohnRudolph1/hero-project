@@ -1,0 +1,42 @@
+<div *ngIf="hero">
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div><span>ID:</span>{{hero.id}}</div>
+  <div>
+    <label>Name:
+      <input [(ngModel)]="hero.name" placeholder="name"/>
+    </label>
+  </div>
+  <div>
+  <label>Power:
+    <input [(ngModel)]="hero.power" placeholder="power"/>
+  </label>
+
+</div>
+<label>Sidekick:
+  <input [(ngModel)]="hero.sidekick" placeholder="sidekick"/>
+</label>
+<div>
+
+<div>
+  <input [(ngModel)]="hero.retire" placeholder="retire" type="checkbox"  [checked]="value === 'Retire'" (click)="value = 'Retire'"> Retired
+
+  <input [(ngModel)]="hero.active" placeholder="active" type="checkbox"  [checked]="value === 'Active'" (click)="value = 'Active'"> Active
+
+</div>
+<div *ngIf="value === 'Retire'">
+  <b>Are you sure?</b>
+</div>   
+<div *ngIf="value === 'Active'">
+  <b>Still Fighting Crime!</b>
+</div> 
+
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
